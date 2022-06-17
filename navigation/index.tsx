@@ -47,8 +47,7 @@ function RootNavigator() {
         <Stack.Navigator
             screenOptions={{
                 headerShown: false
-            }}
-        >
+            }}>
             <Stack.Screen
                 name='Root'
                 component={BottomTabNavigator}

@@ -2,9 +2,21 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        jest: true
+        node: true
     },
-    extends: ['plugin:react/jsx-runtime', 'standard', 'eslint-config-prettier'],
+    settings: {
+        react: {
+            version: 'detect' // React version. "detect" automatically picks the version you have installed.
+        }
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'standard',
+        'eslint-config-prettier',
+        'prettier',
+        'plugin:testing-library/react'
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -13,6 +25,8 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module'
     },
-    plugins: ['react', '@typescript-eslint'],
-    rules: {}
+    plugins: ['react', '@typescript-eslint', 'react-native', 'testing-library'],
+    rules: {
+        'react/react-in-jsx-scope': 'off'
+    }
 };

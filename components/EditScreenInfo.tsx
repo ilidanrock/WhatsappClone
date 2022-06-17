@@ -42,8 +42,8 @@ export default function EditScreenInfo({ path }: { path: string }) {
                     <Text
                         style={styles.helpLinkText}
                         lightColor={Colors.light.tint}>
-                        Tap here if your app doesn't automatically update after
-                        making changes
+                        Tap here if your app doesn`&lsquo;`t automatically
+                        update after making changes
                     </Text>
                 </TouchableOpacity>
             </View>
