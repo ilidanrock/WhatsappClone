@@ -15,14 +15,13 @@ import { ColorSchemeName, Pressable, View } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
+// import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import {
   RootStackParamList,
   RootTabParamList,
-  RootTabScreenProps
 } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -62,15 +61,19 @@ function RootNavigator() {
           title: 'WhatsApp',
           headerRight: () => (
             <View style={{ display: 'flex', flexDirection: 'row' }}>
-              <Fontisto name='zoom' size={24} color={'white'} style={{ marginRight: 15 }} />
+              <Fontisto
+                name='zoom'
+                size={24}
+                color={'white'}
+                style={{ marginRight: 15 }}
+              />
               <MaterialCommunityIcons
                 name='dots-vertical'
                 size={24}
                 color={'white'}
               />
             </View>
-          )
-          ,
+          ),
           headerTitleStyle: {
             color: Colors.light.background
           }
@@ -81,9 +84,9 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
       />
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+      {/* <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name='Modal' component={ModalScreen} />
-      </Stack.Group>
+      </Stack.Group> */}
     </Stack.Navigator>
   );
 }
@@ -106,7 +109,7 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name='TabOne'
         component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+        options={({ navigation }: any) => ({
           title: 'Tab One',
           tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
           headerRight: () => (
