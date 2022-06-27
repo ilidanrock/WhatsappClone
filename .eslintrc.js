@@ -1,32 +1,32 @@
 module.exports = {
-    env: {
-        browser: true,
-        es2021: true,
-        node: true
-    },
-    settings: {
-        react: {
-            version: 'detect' // React version. "detect" automatically picks the version you have installed.
-        }
-    },
-    extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'standard',
-        'eslint-config-prettier',
-        'prettier',
-        'plugin:testing-library/react'
-    ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        },
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-    },
-    plugins: ['react', '@typescript-eslint', 'react-native', 'testing-library'],
-    rules: {
-        'react/react-in-jsx-scope': 'off'
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
+  settings: {
+    react: {
+      version: 'detect' // React version. "detect" automatically picks the version you have installed.
     }
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'standard',
+    'eslint-config-prettier',
+    'prettier',
+    'plugin:testing-library/react'
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
+  plugins: ['react', '@typescript-eslint', 'react-native', 'testing-library'],
+  rules: {
+    'react/react-in-jsx-scope': 'off'
+  }
 };
