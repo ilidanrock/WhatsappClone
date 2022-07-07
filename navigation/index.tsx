@@ -11,7 +11,7 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable, View } from 'react-native';
+import { ColorSchemeName, Pressable, Text, View } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -50,7 +50,7 @@ function RootNavigator() {
         name='Root'
         component={MainTabNavigator}
         options={{
-          title: 'WhatsApp',
+          title: '',
           headerRight: () => (
             <View style={{ display: 'flex', flexDirection: 'row' }}>
               <Fontisto
@@ -66,12 +66,17 @@ function RootNavigator() {
               />
             </View>
           ),
+          headerLeft: () => (
+            <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>
+              WhatsApp
+            </Text>
+          ),
           headerTitleAlign: 'left',
           headerTitleStyle: {
-            color: Colors.light.background
+            color: 'green'
           },
           headerStyle: {
-            backgroundColor: Colors.light.tabIconSelected
+            backgroundColor: Colors?.light.tabIconSelected
           }
         }}
       />
