@@ -19,10 +19,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import {
-  RootStackParamList,
-  RootTabParamList,
-} from '../types';
+import { RootStackParamList, RootTabParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import MainTabNavigator from './MainTabNavigation';
 
@@ -48,11 +45,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-
-
-      }}>
+    <Stack.Navigator>
       <Stack.Screen
         name='Root'
         component={MainTabNavigator}
@@ -73,13 +66,13 @@ function RootNavigator() {
               />
             </View>
           ),
+          headerTitleAlign: 'left',
           headerTitleStyle: {
             color: Colors.light.background
           },
           headerStyle: {
             backgroundColor: Colors.light.tabIconSelected
-          },
-          headerTitleAlign: "left"
+          }
         }}
       />
       <Stack.Screen
