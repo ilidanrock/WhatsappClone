@@ -24,6 +24,7 @@ import {
   RootTabParamList,
 } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import MainTabNavigator from './MainTabNavigation';
 
 export default function Navigation({
   colorScheme
@@ -49,14 +50,12 @@ function RootNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: Colors.light.tabIconSelected },
-        headerTitleStyle: {
-          fontWeight: 'bold'
-        }
+
+
       }}>
       <Stack.Screen
         name='Root'
-        component={BottomTabNavigator}
+        component={MainTabNavigator}
         options={{
           title: 'WhatsApp',
           headerRight: () => (
@@ -76,7 +75,11 @@ function RootNavigator() {
           ),
           headerTitleStyle: {
             color: Colors.light.background
-          }
+          },
+          headerStyle: {
+            backgroundColor: Colors.light.tabIconSelected
+          },
+          headerTitleAlign: "left"
         }}
       />
       <Stack.Screen

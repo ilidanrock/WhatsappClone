@@ -1,11 +1,11 @@
-import { Ionicons, Fontisto } from '@expo/vector-icons'
+import { Fontisto } from '@expo/vector-icons'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-// import ChatsScreen from '../screens/ChatsScreen';
+import ChatsScreen from '../screens/ChatScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { MainTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -17,19 +17,19 @@ export default function MainTabNavigator() {
     return (
         <MainTab.Navigator
             initialRouteName="Chats"
-            tabBarOptions={{
-                activeTintColor: Colors[colorScheme].background,
-                style: {
+            screenOptions={{
+                tabBarInactiveTintColor: Colors[colorScheme].background,
+                tabBarStyle: {
                     backgroundColor: Colors[colorScheme].tint,
                 },
-                indicatorStyle: {
+                tabBarIndicatorStyle: {
                     backgroundColor: Colors[colorScheme].background,
                     height: 4,
                 },
-                labelStyle: {
+                tabBarLabelStyle: {
                     fontWeight: 'bold'
                 },
-                showIcon: true,
+                tabBarShowIcon: true,
             }}>
             <MainTab.Screen
                 name="Camera"
@@ -57,9 +57,9 @@ export default function MainTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: string; color: string }) {
-    return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
+// function TabBarIcon(props: { name: string; color: string }) {
+//     return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+// }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
