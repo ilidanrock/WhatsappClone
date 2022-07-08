@@ -18,9 +18,9 @@ export default function MainTabNavigator() {
     <MainTab.Navigator
       initialRouteName='Chats'
       screenOptions={{
-        tabBarInactiveTintColor: Colors[colorScheme].background,
+        tabBarActiveTintColor: Colors[colorScheme].background,
         tabBarStyle: {
-          backgroundColor: Colors[colorScheme].tint
+          backgroundColor: Colors[colorScheme].tint,
         },
         tabBarIndicatorStyle: {
           backgroundColor: Colors[colorScheme].background,
@@ -47,7 +47,6 @@ export default function MainTabNavigator() {
     </MainTab.Navigator>
   );
 }
-
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 // function TabBarIcon(props: { name: string; color: string }) {
