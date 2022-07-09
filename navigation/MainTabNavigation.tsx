@@ -63,7 +63,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name='TabOneScreen'
         component={ChatsScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerShown: false }}
       />
     </TabOneStack.Navigator>
   );

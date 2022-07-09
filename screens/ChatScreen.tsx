@@ -1,16 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet } from 'react-native';
+import ChatListItem from '../components/ChatListItem/ChatListItem';
 
-type Props = {};
+import { View } from '../components/Themed';
+import chatRooms from '../data/chatRooms';
 
-const ChatScreen = (props: Props) => {
+
+export default function ChatScreen() {
   return (
-    <View>
-      <Text>ChatScreen</Text>
+    <View style={styles.container}>
+      <ChatListItem ChatRoom={chatRooms} />
     </View>
   );
-};
+}
 
-export default ChatScreen;
-
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
