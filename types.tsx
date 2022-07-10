@@ -2,7 +2,7 @@
  * Learn more about using TypeScript with React Navigation:
  * https://reactnavigation.org/docs/typescript/
  */
-
+import { ImageSourcePropType } from 'react-native';
 // import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 // import {
 //   CompositeScreenProps,
@@ -51,7 +51,7 @@ export type TabTwoParamList = {
 export type User = {
   id?: string;
   name?: string;
-  imageUri?: string;
+  imageUri?: ImageSourcePropType | any;
   status?: string;
 };
 

@@ -4,11 +4,10 @@ import ChatListItem from '../components/ChatListItem/ChatListItem';
 import { View } from '../components/Themed';
 import chatRooms from '../data/chatRooms';
 
-
 export default function ChatScreen() {
   return (
     <View style={styles.container}>
-      <ChatListItem ChatRoom={chatRooms} />
+      <ChatListItem ChatRoom={chatRooms[0]} />
     </View>
   );
 }

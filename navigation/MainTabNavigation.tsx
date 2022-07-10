@@ -20,7 +20,7 @@ export default function MainTabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].background,
         tabBarStyle: {
-          backgroundColor: Colors[colorScheme].tint,
+          backgroundColor: Colors[colorScheme].tint
         },
         tabBarIndicatorStyle: {
           backgroundColor: Colors[colorScheme].background,

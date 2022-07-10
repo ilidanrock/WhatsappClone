@@ -79,7 +79,6 @@ function RootNavigator() {
             backgroundColor: Colors?.light.tabIconSelected
           },
           headerShadowVisible: false
-
         }}
       />
       <Stack.Screen
