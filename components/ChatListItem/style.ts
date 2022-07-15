@@ -1,11 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
+import Layout from '../../constants/Layout';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: '100%',
+    width: Layout.window.width, 
     justifyContent: 'space-between',
-    paddingHorizontal: '4%'
+    paddingHorizontal: '4%',
+    paddingVertical: '2%',
+    marginTop: StatusBar.currentHeight || 0,
   },
   text: {
     fontSize: 17,

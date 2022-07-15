@@ -16,7 +16,7 @@ export default function MainTabNavigator() {
 
   return (
     <MainTab.Navigator
-      initialRouteName='Chats'
+      initialRouteName='Camera'
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].background,
         tabBarStyle: {
@@ -29,7 +29,7 @@ export default function MainTabNavigator() {
         tabBarLabelStyle: {
           fontWeight: 'bold'
         },
-        tabBarShowIcon: true
+        tabBarShowIcon: true,
       }}>
       <MainTab.Screen
         name='Camera'

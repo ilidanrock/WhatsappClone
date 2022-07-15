@@ -1,21 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import ChatListItem from '../components/ChatListItem/ChatListItem';
-
-import { View } from '../components/Themed';
 import chatRooms from '../data/chatRooms';
 
 export default function ChatScreen() {
   return (
-    <View style={styles.container}>
-      <ChatListItem ChatRoom={chatRooms[0]} />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={chatRooms}
+        renderItem={({ item }) => <ChatListItem ChatRoom={item} />}
+        keyExtractor={(item) => item.id}
+      />
+    </SafeAreaView>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 });

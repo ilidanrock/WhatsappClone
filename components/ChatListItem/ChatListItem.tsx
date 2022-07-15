@@ -27,7 +27,8 @@ const ChatListItem = (props: ChatListItemProps) => {
           <Text style={[styles.text, { color: Colors[colorSchema].text }]}>
             {ChatRoom.users[0].name}
           </Text>
-          <Text style={[styles.lastMsg, { color: Colors[colorSchema].text }]}>
+          <Text style={[styles.lastMsg, { color: Colors[colorSchema].text }]}
+            numberOfLines={1}>
             {ChatRoom.lastMessage.content}
           </Text>
         </View>
