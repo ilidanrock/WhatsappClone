@@ -4,11 +4,11 @@ import Layout from '../../constants/Layout';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: Layout.window.width, 
+    width: Layout.window.width,
     justifyContent: 'space-between',
     paddingHorizontal: '4%',
     paddingVertical: '2%',
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop: StatusBar.currentHeight || 0
   },
   text: {
     fontSize: 17,

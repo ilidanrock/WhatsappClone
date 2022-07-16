@@ -8,16 +8,15 @@ export default function ChatScreen() {
       <FlatList
         data={chatRooms}
         renderItem={({ item }) => <ChatListItem ChatRoom={item} />}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
     </SafeAreaView>
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 });

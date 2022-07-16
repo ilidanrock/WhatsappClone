@@ -1,13 +1,14 @@
 import { Fontisto } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import CallsScreen from '../screens/CallsScreen';
+import CameraScreen from '../screens/CameraScreen';
 import ChatsScreen from '../screens/ChatScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { MainTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import StatusScreen from '../screens/StatusScreen';
+import { MainTabParamList } from '../types';
 
 const MainTab = createMaterialTopTabNavigator<MainTabParamList>();
 
@@ -16,7 +17,7 @@ export default function MainTabNavigator() {
 
   return (
     <MainTab.Navigator
-      initialRouteName='Camera'
+      initialRouteName='Chats'
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].background,
         tabBarStyle: {
@@ -29,11 +30,11 @@ export default function MainTabNavigator() {
         tabBarLabelStyle: {
           fontWeight: 'bold'
         },
-        tabBarShowIcon: true,
+        tabBarShowIcon: true
       }}>
       <MainTab.Screen
         name='Camera'
-        component={TabOneNavigator}
+        component={CameraScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Fontisto name='camera' color={color} size={18} />
@@ -42,43 +43,8 @@ export default function MainTabNavigator() {
         }}
       />
       <MainTab.Screen name='Chats' component={ChatsScreen} />
-      <MainTab.Screen name='Status' component={TabTwoNavigator} />
-      <MainTab.Screen name='Calls' component={TabTwoNavigator} />
+      <MainTab.Screen name='Status' component={StatusScreen} />
+      <MainTab.Screen name='Calls' component={CallsScreen} />
     </MainTab.Navigator>
-  );
-}
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-// function TabBarIcon(props: { name: string; color: string }) {
-//     return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-// }
-
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
-
-function TabOneNavigator() {
-  return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name='TabOneScreen'
-        component={ChatsScreen}
-        options={{ headerShown: false }}
-      />
-    </TabOneStack.Navigator>
-  );
-}
-
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
-
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name='TabTwoScreen'
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
-    </TabTwoStack.Navigator>
   );
 }
