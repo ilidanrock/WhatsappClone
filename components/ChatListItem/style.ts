@@ -4,6 +4,7 @@ import Layout from '../../constants/Layout';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    maxWidth: Layout.window.width,
     width: Layout.window.width,
     justifyContent: 'space-between',
     paddingHorizontal: '4%',
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     marginLeft: '4%',
-    paddingVertical: '2%'
+    paddingVertical: '2%',
+    maxWidth: Layout.window.width - Layout.window.width / 2,
   },
   lastMsg: {
     opacity: 0.5
