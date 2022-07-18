@@ -1,4 +1,9 @@
-import { FontAwesome, Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import {
+  FontAwesome,
+  Fontisto,
+  MaterialCommunityIcons,
+  MaterialIcons
+} from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -9,7 +14,6 @@ import Colors from '../constants/Colors';
 import ChatRoomScreem from '../screens/ChatRoomScreem';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigation';
-
 
 export default function Navigation({
   colorScheme
@@ -29,12 +33,9 @@ export default function Navigation({
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-
-
 function RootNavigator() {
   return (
     <Stack.Navigator
-
       screenOptions={{
         title: 'WhatsApp',
         headerRight: () => (
@@ -55,16 +56,15 @@ function RootNavigator() {
 
         headerTitleAlign: 'left',
         headerTitleStyle: {
-          color: 'white', fontSize: 20, fontWeight: 'bold'
+          color: 'white',
+          fontSize: 20,
+          fontWeight: 'bold'
         },
         headerStyle: {
-          backgroundColor: Colors?.light.tabIconSelected,
+          backgroundColor: Colors?.light.tabIconSelected
         },
         headerShadowVisible: false
-
-      }}
-
-    >
+      }}>
       <Stack.Screen
         name='Root'
         component={MainTabNavigator}
@@ -75,29 +75,39 @@ function RootNavigator() {
       <Stack.Screen
         name='ChatRoomScreem'
         component={ChatRoomScreem}
-        options={({ route }: any) => (
-          {
-            title: route.params.name,
-            headerBackTitleVisible: true,
-            headerBackTitle: '',
-            headerTintColor: 'white',
-            headerTitleAlign: 'left',
-            headerRight(props) {
-              return (
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-
-                  <FontAwesome name='video-camera' size={22} color={Colors.light.background}
-                    style={{ marginHorizontal: 10 }}
-                  />
-                  <MaterialIcons name='call' size={22} color={Colors.light.background} />
-                  <MaterialCommunityIcons name='dots-vertical' size={22} color={Colors.light.background}
-                  />
-                </View>
-              )
-            }
-          })
-        }
-
+        options={({ route }: any) => ({
+          title: route.params.name,
+          headerBackTitleVisible: true,
+          headerBackTitle: '',
+          headerTintColor: 'white',
+          headerTitleAlign: 'left',
+          headerRight(props) {
+            return (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
+                }}>
+                <FontAwesome
+                  name='video-camera'
+                  size={22}
+                  color={Colors.light.background}
+                  style={{ marginHorizontal: 10 }}
+                />
+                <MaterialIcons
+                  name='call'
+                  size={22}
+                  color={Colors.light.background}
+                />
+                <MaterialCommunityIcons
+                  name='dots-vertical'
+                  size={22}
+                  color={Colors.light.background}
+                />
+              </View>
+            );
+          }
+        })}
       />
     </Stack.Navigator>
   );

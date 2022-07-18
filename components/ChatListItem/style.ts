@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
   lastMsg: {
     opacity: 0.5
   },
-  icon:{
-    marginHorizontal: '4%',
+  icon: {
+    marginHorizontal: '4%'
   }
 });
 

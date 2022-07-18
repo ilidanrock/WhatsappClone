@@ -8,18 +8,17 @@ import useColorScheme from '../../hooks/useColorScheme';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type NavigationProps = StackNavigationProp<TabParamList>
+type NavigationProps = StackNavigationProp<TabParamList>;
 
 const ChatListItem = (props: ChatListItemProps) => {
   const colorSchema = useColorScheme();
   const { ChatRoom } = props;
   const navigation = useNavigation<NavigationProps>();
 
-
   const onCLick = () => {
     navigation.navigate('ChatRoomScreem', {
       id: ChatRoom.id,
-      name: ChatRoom.users[0].name,
+      name: ChatRoom.users[0].name
     });
   };
 
