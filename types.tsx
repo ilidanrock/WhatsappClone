@@ -30,8 +30,9 @@ export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
   Contacts: undefined;
-  ChatRoom: undefined;
+  ChatRoomScreem: undefined | any;
 };
+
 
 export type MainTabParamList = {
   Camera: undefined;
@@ -67,3 +68,14 @@ export type ChatRoom = {
   users: User[];
   lastMessage: Message;
 };
+
+export type ChatListItemProps = {
+  ChatRoom: ChatRoom | any;
+};
+
+export type TabParamList = {
+  ChatRoomScreem: {
+    id: string,
+    name: string,
+  };
+}

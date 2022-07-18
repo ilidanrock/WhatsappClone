@@ -45,6 +45,7 @@ export default function MainTabNavigator() {
       <MainTab.Screen name='Chats' component={ChatsScreen} />
       <MainTab.Screen name='Status' component={StatusScreen} />
       <MainTab.Screen name='Calls' component={CallsScreen} />
+
     </MainTab.Navigator>
   );
 }

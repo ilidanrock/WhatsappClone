@@ -23,11 +23,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     marginLeft: '4%',
-    paddingVertical: '2%',
-    maxWidth: Layout.window.width - Layout.window.width / 2,
+    paddingVertical: '3%',
+    maxWidth: Layout.window.width - Layout.window.width / 2
   },
   lastMsg: {
     opacity: 0.5
+  },
+  icon:{
+    marginHorizontal: '4%',
   }
 });
 

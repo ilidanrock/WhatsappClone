@@ -1,20 +1,38 @@
-import { SafeAreaView, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import React from 'react';
-import { ChatRoom } from '../../types';
+import { ChatListItemProps, TabParamList } from '../../types';
 import { Avatar } from '@rneui/themed';
 import styles from './style';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-export type ChatListItemProps = {
-  ChatRoom: ChatRoom;
-};
+type NavigationProps = StackNavigationProp<TabParamList>
 
 const ChatListItem = (props: ChatListItemProps) => {
   const colorSchema = useColorScheme();
   const { ChatRoom } = props;
+  const navigation = useNavigation<NavigationProps>();
+
+
+  const onCLick = () => {
+    navigation.navigate('ChatRoomScreem', {
+      id: ChatRoom.id,
+      name: ChatRoom.users[0].name,
+    });
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
+    <Pressable
+      onLongPress={onCLick}
+      style={({ pressed }) => [
+        {
+          backgroundColor: pressed ? 'rgb(221, 221, 221)' : 'white'
+        },
+        styles.container
+      ]}
+      delayLongPress={30}>
       <View style={styles.midContainer}>
         <Avatar
           source={{
@@ -43,7 +61,7 @@ const ChatListItem = (props: ChatListItemProps) => {
         }}>
         {new Date(`${ChatRoom.lastMessage.createdAt}`).toLocaleDateString()}
       </Text>
-    </SafeAreaView>
+    </Pressable>
   );
 };
 
