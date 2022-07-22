@@ -15,5 +15,11 @@ export default {
     tint: tintColorDark,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark
+  },
+  messageReceiver: {
+    background: '#ECE5DD'
+  },
+  messageSender: {
+    background: '#DCF8C6'
   }
 };
