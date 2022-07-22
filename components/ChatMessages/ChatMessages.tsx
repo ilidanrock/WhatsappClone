@@ -3,6 +3,7 @@ import React from 'react';
 import { Message } from '../../types';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
+import moment from 'moment';
 
 type ChatMessagesProps = {
   message: Message;
@@ -20,9 +21,10 @@ const ChatMessages = (props: ChatMessagesProps) => {
           fontSize: 14,
           fontWeight: 'normal',
           color: Colors[colorSchema].text,
-          marginTop: '2%'
+          marginTop: '2%',
+          textAlign: 'right'
         }}>
-        {new Date(`${message.createdAt}`).toLocaleDateString()}
+        {moment(message.createdAt).fromNow(true)}
       </Text>
     </View>
   );
