@@ -10,7 +10,7 @@ export default function ChatScreen() {
         data={chatRooms}
         renderItem={({ item }) => <ChatListItem ChatRoom={item} />}
         keyExtractor={item => item.id}
-        inverted
+
       />
 
     </SafeAreaView>
