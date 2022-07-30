@@ -1,4 +1,4 @@
-import {  StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Layout from '../../constants/Layout';
 
 const styles = StyleSheet.create({
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: '4%',
     paddingVertical: '2%',
-    marginTop:  0
+    marginTop: 0
   },
   text: {
     fontSize: 17,

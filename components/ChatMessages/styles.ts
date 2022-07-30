@@ -3,7 +3,7 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   messageBox: {
     backgroundColor: '#fff',
@@ -14,17 +14,17 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: 'center'
   },
   message: {
-    
+    fontSize: 16,
   },
-  name:{
+  name: {
     color: Colors.light.tint,
     fontWeight: 'bold',
-    marginVertical: 5,
+    marginVertical: 5
   },
-  time:{
+  time: {
     color: 'grey',
     fontSize: 14,
     fontWeight: 'normal',
