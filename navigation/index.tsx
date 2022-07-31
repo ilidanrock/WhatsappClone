@@ -12,6 +12,7 @@ import { ColorSchemeName, View } from 'react-native';
 
 import Colors from '../constants/Colors';
 import ChatRoomScreem from '../screens/ChatRoomScreem';
+import Contacts from '../screens/Contacts';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigation';
 
@@ -69,7 +70,8 @@ function RootNavigator() {
         name='Root'
         component={MainTabNavigator}
         options={{
-          headerShown: true
+          headerShown: true,
+
         }}
       />
       <Stack.Screen
@@ -92,7 +94,7 @@ function RootNavigator() {
                   name='video-camera'
                   size={22}
                   color={Colors.light.background}
-                  style={{ marginHorizontal: 10 }}
+                  style={{ marginHorizontal: 5 }}
                 />
                 <MaterialIcons
                   name='call'
@@ -109,6 +111,7 @@ function RootNavigator() {
           }
         })}
       />
+      <Stack.Screen name='Contacts' component={Contacts} />
     </Stack.Navigator>
   );
 }

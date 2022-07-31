@@ -8,7 +8,10 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 50,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'absolute',
+    right: 10,
+    bottom: '3%'
   }
 });
 

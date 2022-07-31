@@ -1,9 +1,8 @@
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import ChatListItem from '../components/ChatListItem/ChatListItem';
-import NewMessageButton from '../components/NewMessageButton/NewMessageButton';
 import chatRooms from '../data/chatRooms';
 
-export default function ChatScreen() {
+export default function Contacts() {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
@@ -11,7 +10,6 @@ export default function ChatScreen() {
         renderItem={({ item }) => <ChatListItem ChatRoom={item} />}
         keyExtractor={item => item.id}
       />
-      <NewMessageButton />
     </SafeAreaView>
   );
 }
@@ -19,7 +17,6 @@ export default function ChatScreen() {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%'
+    justifyContent: 'center'
   }
 });

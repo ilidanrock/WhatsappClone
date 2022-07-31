@@ -77,4 +77,5 @@ export type TabParamList = {
     id: string;
     name: string;
   };
+  Contacts: undefined;
 };

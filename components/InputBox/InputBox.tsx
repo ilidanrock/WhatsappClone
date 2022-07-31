@@ -1,16 +1,7 @@
-import {
-  KeyboardAvoidingView,
-  Platform,
-  TextInput,
-  View
-} from 'react-native';
+import { KeyboardAvoidingView, Platform, TextInput, View } from 'react-native';
 import React, { useState } from 'react';
 import styles from './styles';
-import {
-  Ionicons,
-  FontAwesome,
-  FontAwesome5
-} from '@expo/vector-icons';
+import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 import ButtonSend from '../ButtonSend/ButtonSend';
 type Props = {};
@@ -50,13 +41,11 @@ const InputBox = (props: Props) => {
               color={Colors.inputIcon.color}
             />
           </View>
-
         </View>
       </View>
       <View>
         <ButtonSend text={text} />
       </View>
-
     </KeyboardAvoidingView>
   );
 };

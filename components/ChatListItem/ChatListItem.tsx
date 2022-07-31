@@ -31,7 +31,7 @@ const ChatListItem = (props: ChatListItemProps) => {
         },
         styles.container
       ]}
-      delayLongPress={15}>
+      delayLongPress={20}>
       <View style={styles.midContainer}>
         <Avatar
           source={{
