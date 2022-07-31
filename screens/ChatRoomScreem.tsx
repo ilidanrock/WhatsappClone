@@ -1,4 +1,11 @@
-import { FlatList, ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
+import {
+  FlatList,
+  ImageBackground,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  View
+} from 'react-native';
 import React from 'react';
 import { useRoute } from '@react-navigation/native';
 import ChatMessages from '../components/ChatMessages/ChatMessages';
@@ -16,8 +23,7 @@ const ChatRoomScreem = (props: Props) => {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}
-      keyboardVerticalOffset={65}
-    >
+      keyboardVerticalOffset={65}>
       <View style={{ flex: 1 }}>
         <ImageBackground
           source={{
@@ -33,7 +39,6 @@ const ChatRoomScreem = (props: Props) => {
           <View>
             <InputBox />
           </View>
-
         </ImageBackground>
       </View>
     </KeyboardAvoidingView>
@@ -44,8 +49,6 @@ export default ChatRoomScreem;
 
 const styles = StyleSheet.create({
   image: {
-
-    justifyContent: 'flex-end',
-
+    justifyContent: 'flex-end'
   }
 });

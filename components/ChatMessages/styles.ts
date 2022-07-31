@@ -10,14 +10,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     margin: 10,
     maxWidth: '90%',
-    padding: 10,
+    padding: 10
   },
   image: {
     flex: 1,
     justifyContent: 'center'
   },
   message: {
-    fontSize: 16,
+    fontSize: 16
   },
   name: {
     color: Colors.light.tint,

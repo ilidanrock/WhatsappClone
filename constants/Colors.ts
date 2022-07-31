@@ -21,5 +21,8 @@ export default {
   },
   messageSender: {
     background: '#DCF8C6'
+  },
+  inputIcon: {
+    color: '#b8bbbd'
   }
 };

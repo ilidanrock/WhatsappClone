@@ -17,7 +17,6 @@ const ChatMessages = (props: ChatMessagesProps) => {
 
   return (
     <View style={styles.container}>
-
       <View
         style={[
           styles.messageBox,
@@ -29,13 +28,12 @@ const ChatMessages = (props: ChatMessagesProps) => {
           }
         ]}>
         {!MyMessage() && <Text style={styles.name}>{message.user?.name}</Text>}
-        <Text style={styles.message} >{message.content}</Text>
-        <Text
-          style={styles.time}>
+        <Text style={styles.message}>{message.content}</Text>
+        <Text style={styles.time}>
           {moment(message.createdAt).fromNow(true)}
         </Text>
       </View>
-    </View >
+    </View>
   );
 };
 
