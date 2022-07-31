@@ -70,8 +70,7 @@ function RootNavigator() {
         name='Root'
         component={MainTabNavigator}
         options={{
-          headerShown: true,
-
+          headerShown: true
         }}
       />
       <Stack.Screen
