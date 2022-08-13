@@ -49,8 +49,8 @@ export type TabTwoParamList = {
 };
 
 export type User = {
-  id?: string;
-  name?: string;
+  id: string;
+  name: string;
   imageUri?: ImageSourcePropType;
   status?: string;
 };
@@ -78,4 +78,9 @@ export type TabParamList = {
     name: string;
   };
   Contacts: undefined;
+  user: any;
+};
+
+export type ContactListItemsProps = {
+  user: User;
 };

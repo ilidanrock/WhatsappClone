@@ -1,13 +1,13 @@
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
-import ChatListItem from '../components/ChatListItem/ChatListItem';
-import chatRooms from '../data/chatRooms';
+import ContactListItems from '../components/ContactListItems/ContactListItems';
+import users from '../data/users';
 
 export default function Contacts() {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={chatRooms}
-        renderItem={({ item }) => <ChatListItem ChatRoom={item} />}
+        data={users}
+        renderItem={({ item }) => <ContactListItems user={item} />}
         keyExtractor={item => item.id}
       />
     </SafeAreaView>

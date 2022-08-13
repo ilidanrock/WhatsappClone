@@ -30,8 +30,7 @@ export default function MainTabNavigator() {
         tabBarLabelStyle: {
           fontWeight: 'bold'
         },
-        tabBarShowIcon: true,
-        tabBarScrollEnabled: true
+        tabBarShowIcon: true
       }}>
       <MainTab.Screen
         name='Camera'

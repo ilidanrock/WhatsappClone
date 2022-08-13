@@ -110,7 +110,16 @@ function RootNavigator() {
           }
         })}
       />
-      <Stack.Screen name='Contacts' component={Contacts} />
+      <Stack.Screen
+        name='Contacts'
+        component={Contacts}
+        options={({ route }: any) => ({
+          headerBackTitleVisible: true,
+          headerBackTitle: '',
+          headerTintColor: 'white',
+          headerTitleAlign: 'left'
+        })}
+      />
     </Stack.Navigator>
   );
 }
