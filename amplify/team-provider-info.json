@@ -1,5 +1,5 @@
 {
-  "providers": {
+  "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-whatsappclone-dev-204607-authRole",
       "UnauthRoleArn": "arn:aws:iam::733438788657:role/amplify-whatsappclone-dev-204607-unauthRole",
