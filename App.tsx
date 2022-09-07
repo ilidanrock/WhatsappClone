@@ -6,9 +6,11 @@ import Navigation from './navigation';
 
 import { Amplify } from 'aws-amplify'
 import awsconfig from './src/aws-exports'
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 Amplify.configure(awsconfig)
 
-export default function App() {
+function App(): any {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
@@ -22,3 +24,4 @@ export default function App() {
     );
   }
 }
+export default withAuthenticator(App);
