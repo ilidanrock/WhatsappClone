@@ -4,11 +4,11 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
-import { Amplify } from 'aws-amplify'
-import awsconfig from './src/aws-exports'
-import { withAuthenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
-Amplify.configure(awsconfig)
+// import { Amplify } from 'aws-amplify'
+// import awsconfig from './src/aws-exports'
+// import { withAuthenticator } from '@aws-amplify/ui-react';
+// import '@aws-amplify/ui-react/styles.css';
+// Amplify.configure(awsconfig)
 
 function App(): any {
   const isLoadingComplete = useCachedResources();
@@ -24,4 +24,4 @@ function App(): any {
     );
   }
 }
-export default withAuthenticator(App);
+export default App

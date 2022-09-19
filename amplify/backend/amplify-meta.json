@@ -40,7 +40,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-whatsappclone-dev-204607-deployment/amplify-cfn-templates/auth/whatsappclone9241cbc0-cloudformation-template.json",
         "logicalId": "authwhatsappclone9241cbc0"
       },
-      "lastPushTimeStamp": "2022-09-07T02:13:34.958Z",
+      "lastPushTimeStamp": "2022-09-16T13:59:35.746Z",
       "output": {
         "UserPoolId": "us-east-1_RRytAzaIU",
         "AppClientIDWeb": "3pod21ti4tjg6jop3l21fdsi3n",
