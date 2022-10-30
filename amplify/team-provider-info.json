@@ -16,5 +16,23 @@
         "whatsappclone9241cbc0": {}
       }
     }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whatsappclone-staging-155427-authRole",
+      "UnauthRoleArn": "arn:aws:iam::733438788657:role/amplify-whatsappclone-staging-155427-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::733438788657:role/amplify-whatsappclone-staging-155427-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whatsappclone-staging-155427-deployment",
+      "UnauthRoleName": "amplify-whatsappclone-staging-155427-unauthRole",
+      "StackName": "amplify-whatsappclone-staging-155427",
+      "StackId": "arn:aws:cloudformation:us-east-1:733438788657:stack/amplify-whatsappclone-staging-155427/e3adf700-57cb-11ed-82cb-0e8dec65c45f",
+      "AmplifyAppId": "d3vgb7cjhbgqb"
+    },
+    "categories": {
+      "auth": {
+        "whatsappclone9241cbc0": {}
+      }
+    }
   }
 }

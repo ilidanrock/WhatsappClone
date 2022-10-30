@@ -3,5 +3,10 @@
     "configLevel": "project",
     "useProfile": true,
     "profileName": "ilidanrock"
+  },
+  "staging": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/home/ilidanrock/.amplify/awscloudformation/NOreZFzyej"
   }
 }
