@@ -31,6 +31,7 @@ export type RootStackParamList = {
   NotFound: undefined;
   Contacts: undefined;
   ChatRoomScreem: any;
+  ModalLog: any
 };
 
 export type MainTabParamList = {
@@ -79,6 +80,7 @@ export type TabParamList = {
   };
   Contacts: undefined;
   user: any;
+  ModalLog: undefined
 };
 
 export type ContactListItemsProps = {

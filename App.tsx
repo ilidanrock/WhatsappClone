@@ -8,8 +8,12 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
-// import '@aws-amplify/ui-react/styles.css';
-Amplify.configure(awsconfig);
+Amplify.configure({
+  ...awsconfig,
+  Analytics: {
+    disabled: true
+  }
+});
 
 function App(): any {
   const isLoadingComplete = useCachedResources();
@@ -25,6 +29,4 @@ function App(): any {
     );
   }
 }
-export default withAuthenticator(App, {
-  includeGreetings: true
-});
+export default withAuthenticator(App);

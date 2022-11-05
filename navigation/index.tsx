@@ -4,17 +4,21 @@ import {
   MaterialCommunityIcons,
   MaterialIcons
 } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import * as React from 'react';
-import { ColorSchemeName, View } from 'react-native';
+import { ColorSchemeName, Pressable, View } from 'react-native';
+import ModalLog from '../components/ModalLogout/ModalLog';
 
 import Colors from '../constants/Colors';
 import ChatRoomScreem from '../screens/ChatRoomScreem';
 import Contacts from '../screens/Contacts';
-import { RootStackParamList } from '../types';
+import { RootStackParamList, TabParamList } from '../types';
 import MainTabNavigator from './MainTabNavigation';
+// import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+
 
 export default function Navigation({
   colorScheme
@@ -33,8 +37,15 @@ export default function Navigation({
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
+type NavigationProps = StackNavigationProp<TabParamList>;
 
 function RootNavigator() {
+  const navigation = useNavigation<NavigationProps>();
+  const onPressFunction = () => {
+
+    navigation.navigate("ModalLog")
+
+  }
   return (
     <Stack.Navigator
       screenOptions={{
@@ -47,14 +58,24 @@ function RootNavigator() {
               color={'white'}
               style={{ marginRight: 15 }}
             />
-            <MaterialCommunityIcons
-              name='dots-vertical'
-              size={24}
-              color={'white'}
-            />
+            <Pressable
+              onPress={onPressFunction}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: 30,
+                width: 30
+              }}
+            >
+              <MaterialCommunityIcons
+                name='dots-vertical'
+                size={24}
+                color={'white'}
+              />
+            </Pressable>
+
           </View>
         ),
-
         headerTitleAlign: 'left',
         headerTitleStyle: {
           color: 'white',
@@ -64,13 +85,15 @@ function RootNavigator() {
         headerStyle: {
           backgroundColor: Colors?.light.tabIconSelected
         },
-        headerShadowVisible: false
+        headerShadowVisible: false,
+        // headerShown: false,
+        // headerBlurEffect: 'systemChromeMaterial'
       }}>
       <Stack.Screen
         name='Root'
         component={MainTabNavigator}
         options={{
-          headerShown: true
+          headerShown: false
         }}
       />
       <Stack.Screen
@@ -80,6 +103,7 @@ function RootNavigator() {
           title: route.params.name,
           headerBackTitleVisible: true,
           headerBackTitle: '',
+          headerShown: true,
           headerTintColor: 'white',
           headerTitleAlign: 'left',
           headerRight(props) {
@@ -120,6 +144,9 @@ function RootNavigator() {
           headerTitleAlign: 'left'
         })}
       />
+      <Stack.Group screenOptions={{ presentation: 'modal' }} >
+        <Stack.Screen name="ModalLog" component={ModalLog} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
