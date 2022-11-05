@@ -1,17 +1,15 @@
-import { Text, TouchableOpacity, View } from 'react-native'
-import styles from "./styles";
-import React from 'react'
+import { Text, TouchableOpacity, View } from 'react-native';
+import styles from './styles';
+import React from 'react';
 import { Auth } from 'aws-amplify';
-
 
 type Props = {
   modalVisible: boolean;
   route: any;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
 const ModalLog = (props: Props) => {
-
   async function signOut() {
     try {
       await Auth.signOut();
@@ -22,15 +20,11 @@ const ModalLog = (props: Props) => {
 
   return (
     <View style={styles.centeredView}>
-      <TouchableOpacity
-        onPress={signOut}
-        style={styles.buttonClose}
-      >
+      <TouchableOpacity onPress={signOut} style={styles.buttonClose}>
         <Text style={styles.textStyle}>Sign Out</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default ModalLog
-
+export default ModalLog;

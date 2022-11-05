@@ -8,7 +8,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import * as React from 'react';
-import { ColorSchemeName, Pressable, View } from 'react-native';
+import { ColorSchemeName, Pressable, Text, View } from 'react-native';
 import ModalLog from '../components/ModalLogout/ModalLog';
 
 import Colors from '../constants/Colors';
@@ -18,7 +18,7 @@ import { RootStackParamList, TabParamList } from '../types';
 import MainTabNavigator from './MainTabNavigation';
 // import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-
+import Layout from '../constants/Layout';
 
 export default function Navigation({
   colorScheme
@@ -42,40 +42,11 @@ type NavigationProps = StackNavigationProp<TabParamList>;
 function RootNavigator() {
   const navigation = useNavigation<NavigationProps>();
   const onPressFunction = () => {
-
-    navigation.navigate("ModalLog")
-
-  }
+    navigation.navigate('ModalLog');
+  };
   return (
     <Stack.Navigator
       screenOptions={{
-        title: 'WhatsApp',
-        headerRight: () => (
-          <View style={{ display: 'flex', flexDirection: 'row' }}>
-            <Fontisto
-              name='zoom'
-              size={24}
-              color={'white'}
-              style={{ marginRight: 15 }}
-            />
-            <Pressable
-              onPress={onPressFunction}
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: 30,
-                width: 30
-              }}
-            >
-              <MaterialCommunityIcons
-                name='dots-vertical'
-                size={24}
-                color={'white'}
-              />
-            </Pressable>
-
-          </View>
-        ),
         headerTitleAlign: 'left',
         headerTitleStyle: {
           color: 'white',
@@ -85,7 +56,7 @@ function RootNavigator() {
         headerStyle: {
           backgroundColor: Colors?.light.tabIconSelected
         },
-        headerShadowVisible: false,
+        headerShadowVisible: false
         // headerShown: false,
         // headerBlurEffect: 'systemChromeMaterial'
       }}>
@@ -93,7 +64,47 @@ function RootNavigator() {
         name='Root'
         component={MainTabNavigator}
         options={{
-          headerShown: false
+          header: props => (
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+                backgroundColor: Colors?.light.tabIconSelected,
+                height: 60
+              }}>
+              <Text
+                style={{
+                  marginHorizontal: Layout.window.width * 0.25,
+                  fontSize: 20,
+                  fontWeight: '600',
+                  color: Colors.light.background
+                }}>
+                Whatsapp
+              </Text>
+              <Fontisto
+                name='zoom'
+                size={24}
+                color={'white'}
+                style={{ marginRight: 15 }}
+              />
+              <Pressable
+                onPress={onPressFunction}
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: 30,
+                  width: 30
+                }}>
+                <MaterialCommunityIcons
+                  name='dots-vertical'
+                  size={24}
+                  color={'white'}
+                />
+              </Pressable>
+            </View>
+          )
         }}
       />
       <Stack.Screen
@@ -144,8 +155,8 @@ function RootNavigator() {
           headerTitleAlign: 'left'
         })}
       />
-      <Stack.Group screenOptions={{ presentation: 'modal' }} >
-        <Stack.Screen name="ModalLog" component={ModalLog} />
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name='ModalLog' component={ModalLog} />
       </Stack.Group>
     </Stack.Navigator>
   );

@@ -1,8 +1,6 @@
-import { StyleSheet } from 'react-native'
-import Colors from '../../constants/Colors'
-import Layout from '../../constants/Layout'
-
-
+import { StyleSheet } from 'react-native';
+import Colors from '../../constants/Colors';
+import Layout from '../../constants/Layout';
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -17,7 +15,7 @@ const styles = StyleSheet.create({
     elevation: 2
   },
   buttonOpen: {
-    backgroundColor: "#F194FF",
+    backgroundColor: '#F194FF'
   },
   buttonClose: {
     backgroundColor: Colors.light.tint,
@@ -27,14 +25,14 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
   modalText: {
     marginBottom: 15,
-    textAlign: "center"
+    textAlign: 'center'
   }
-})
+});
 
-export default styles
+export default styles;

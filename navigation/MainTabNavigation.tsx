@@ -17,6 +17,7 @@ export default function MainTabNavigator() {
 
   return (
     <>
+      {/* <View style={{ height: 60, flex: 0.1 }}></View> */}
       <MainTab.Navigator
         initialRouteName='Chats'
         screenOptions={{
@@ -31,9 +32,8 @@ export default function MainTabNavigator() {
           tabBarLabelStyle: {
             fontWeight: 'bold'
           },
-          tabBarShowIcon: true,
-        }}
-      >
+          tabBarShowIcon: true
+        }}>
         <MainTab.Screen
           name='Camera'
           component={CameraScreen}
@@ -42,12 +42,12 @@ export default function MainTabNavigator() {
               <Fontisto name='camera' color={color} size={18} />
             ),
             tabBarLabel: () => null
-          }} />
-        <MainTab.Screen
-          name='Chats'
-          component={ChatsScreen} />
+          }}
+        />
+        <MainTab.Screen name='Chats' component={ChatsScreen} />
         <MainTab.Screen name='Status' component={StatusScreen} />
         <MainTab.Screen name='Calls' component={CallsScreen} />
-      </MainTab.Navigator></>
+      </MainTab.Navigator>
+    </>
   );
 }
