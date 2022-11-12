@@ -1,13 +1,20 @@
 export type AmplifyDependentResourcesAttributes = {
-  auth: {
-    whatsappclone9241cbc0: {
-      IdentityPoolId: 'string';
-      IdentityPoolName: 'string';
-      UserPoolId: 'string';
-      UserPoolArn: 'string';
-      UserPoolName: 'string';
-      AppClientIDWeb: 'string';
-      AppClientID: 'string';
-    };
-  };
-};
+    "auth": {
+        "whatsappclone9241cbc0": {
+            "IdentityPoolId": "string",
+            "IdentityPoolName": "string",
+            "UserPoolId": "string",
+            "UserPoolArn": "string",
+            "UserPoolName": "string",
+            "AppClientIDWeb": "string",
+            "AppClientID": "string"
+        }
+    },
+    "api": {
+        "WhatsappClone": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    }
+}
