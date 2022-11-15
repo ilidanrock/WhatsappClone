@@ -8,6 +8,8 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
+import { ApiProvider } from './context/ApiContext';
+
 Amplify.configure({
   ...awsconfig,
   Analytics: {
@@ -16,15 +18,20 @@ Amplify.configure({
 });
 
 function App(): any {
+
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+
+
 
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
+        <ApiProvider>
+          <Navigation colorScheme={colorScheme} />
+        </ApiProvider>
       </SafeAreaProvider>
     );
   }

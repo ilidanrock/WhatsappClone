@@ -68,21 +68,37 @@ export type ContactListItemsProps = {
   user: User;
 };
 
-export type result = {
+export type itemUser = {
+  Messages: {
+    nextToken: undefined;
+    startedAt: undefined
+  };
+  deleted: boolean;
+  _lastChangedAt: number;
+  _version: number;
+  chatrooms: {
+    nextToken: null;
+    startedAt: null
+  };
+  createdAt: string;
+  id: string;
+  name: string;
+  photo: string;
+  status: string;
+  updatedAt: string
+}[]
+
+
+export type Data = {
+  listUsers: any;
   data: {
     listUsers: {
-      items: Array<{
-        Messages: {
-          nextToken: any;
-          startedAt: any;
-        };
-        createdAt: string;
-        id: string;
-        name: string;
-        photo: string;
-        status: string;
-        updatedAt: string;
-      }>;
-    };
-  };
+      items: itemUser
+    }
+  }
+}
+
+export type Types = {
+  users?: itemUser;
+  getListUsers(): void
 };

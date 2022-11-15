@@ -19,6 +19,7 @@ import MainTabNavigator from './MainTabNavigation';
 // import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Layout from '../constants/Layout';
+import { useApiContext } from '../context/ApiContext';
 
 export default function Navigation({
   colorScheme
@@ -44,6 +45,12 @@ function RootNavigator() {
   const onPressFunction = () => {
     navigation.navigate('ModalLog');
   };
+  const context = useApiContext()
+
+  React.useEffect(() => {
+    context.getListUsers()
+  }, [])
+
   return (
     <Stack.Navigator
       screenOptions={{
